@@ -1,10 +1,14 @@
 package com.bridgelabz.DummyTesting;
 
-public class PrintMyArray<E> {
-	E[] myArray;
+public class PrintMyArray<X, Y, Z> {
+	X[] myXArray;
+	Y[] myYArray;
+	Z[] myZArray;
 	
-	public PrintMyArray(E[] myArray) {
-		this.myArray = myArray;
+	public PrintMyArray(X[] myXArray, Y[] myYArray, Z[] myZArray) {
+		this.myXArray = myXArray;
+		this.myYArray = myYArray;
+		this.myZArray = myZArray;
 	}
 	public static void main( String[] args ) {
 	Integer[] a = {1,2,3};
@@ -13,9 +17,7 @@ public class PrintMyArray<E> {
 	toPrint(a);
 	toPrint(b);
 	toPrint(c);
-	new PrintMyArray<Integer>(a).toPrint();
-	new PrintMyArray<Double>(b).toPrint();
-	new PrintMyArray<Character>(c).toPrint();
+	new PrintMyArray<Integer, Double, Character>(a, b, c).toPrint();
 	}
 	private static <E> void toPrint(E[] a) {
 		for (E i:a) {
@@ -23,6 +25,8 @@ public class PrintMyArray<E> {
 		}
 	}
 	private void toPrint() {
-		toPrint(myArray);
+		toPrint(myXArray);
+		toPrint(myYArray);
+		toPrint(myZArray);
 	}
 }
